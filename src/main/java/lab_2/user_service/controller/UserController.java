@@ -41,6 +41,7 @@ public class UserController {
 
     @PostMapping("/users")
     ResponseEntity<User> createUser(@RequestBody User newUser) {
+        System.out.println(newUser.toString());
         User user = userRepository.save(newUser);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
